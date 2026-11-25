@@ -17,6 +17,7 @@ button:focus-visible,input:focus-visible { outline: 3px solid #5936bd; outline-o
 #message { padding: 10px 12px; background: #fff1c5; border-radius: 10px; }
 .secret-bar { position: sticky; top: 0; z-index: 2; display: flex; align-items: center; gap: 9px; padding: 8px; background: #222036; color: white; border-radius: 12px; }
 #secret { width: 46px; flex-shrink: 0; }
+#secret:not(.concealed) .portrait { border: 1px solid #ffd283; border-radius: 10px; }
 #secret.concealed .portrait { font-size: 0; background: #5936bd; }
 #secret.concealed .portrait::after { content: '?'; font-size: 1.3rem; color: white; }
 #secret.concealed img { visibility: hidden; }
@@ -33,7 +34,6 @@ button:focus-visible,input:focus-visible { outline: 3px solid #5936bd; outline-o
 .card[aria-pressed=true] .portrait { filter: grayscale(1) brightness(.6); }
 .card[aria-pressed=true] .name { text-decoration: line-through; }
 .card[aria-pressed=true]::after { content: '×'; position: absolute; inset: 0; display: grid; place-items: center; font-size: 2rem; color: white; text-shadow: 0 1px 3px black; pointer-events: none; }
-
 
 :root { color: #fff4d4; background: #211333; }
 body { min-height: 100vh; background: radial-gradient(ellipse at top left,#6b2458,transparent 55%), radial-gradient(ellipse at top right,#263d79,transparent 60%), #211333; }
@@ -58,7 +58,6 @@ button { color: #211333; }
 #leave { background: #302049; border-color: #825497; color: #fff4d4; }
 
 header { display: flex; align-items: center; justify-content: space-between; gap: 8px; }
-
 
 #round-dialog {
   width: min(420px, calc(100% - 28px));
@@ -115,6 +114,7 @@ body:has(.landing:not([hidden])) header {
 .landing em { color: #ffcf78; font-style: normal; }
 .landing p { margin: 8px 0 0; color: #f0dcea; }
 .landing .primary { background: #ffcf78; color: #261638; border: 0; margin: 22px 0; }
+
 @media (min-width: 720px) {
   body:has(.landing:not([hidden]))::before {
     background-image: linear-gradient(90deg, #282034 9%, transparent 40%, transparent 60%, #282034 91%), url('./portada-lalo.webp');
