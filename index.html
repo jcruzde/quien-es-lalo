@@ -1,0 +1,48 @@
+<!doctype html>
+<html lang="es">
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width, initial-scale=1">
+  <meta name="theme-color" content="#f7f0de">
+  <title>¿Quién es Lalo?</title>
+  <link rel="stylesheet" href="./style.css">
+  <script type="module" src="./app.js"></script>
+</head>
+<body>
+  <main>
+    <header><a href="./">¿Quién es <em>Lalo?</em></a></header>
+    <p id="message" role="status" hidden></p>
+    <section id="landing" class="panel landing">
+      <div class="landing-content">
+        <h1>¿Quién es <em>Lalo?</em></h1>
+        <p>Adivina qué Lalo le ha tocado a tu rival.</p>
+        <button id="start" class="primary">Inicio</button>
+      </div>
+    </section>
+    <section id="game" hidden>
+      <div class="secret-bar">
+        <div id="secret"></div>
+        <div class="secret-info"><strong>Tu personaje secreto</strong><span id="secret-name"></span></div>
+        <button id="reveal" aria-pressed="false">Mostrar</button>
+      </div>
+      <div class="board-heading"><h1>Tu tablero</h1><span id="remaining"></span></div>
+      <p class="hint">Toca una carta para tacharla o recuperarla.</p>
+      <div id="board"></div>
+      <div class="game-actions">
+        <button id="next">Nueva ronda</button>
+        <button id="leave">Volver a la portada</button>
+      </div>
+    </section>
+  </main>
+  <dialog id="round-dialog" aria-labelledby="round-dialog-title" aria-describedby="round-dialog-description">
+    <form method="dialog">
+      <h2 id="round-dialog-title">¿Empezar otra ronda?</h2>
+      <p id="round-dialog-description">Se sorteará otro personaje y se borrarán tus descartes.</p>
+      <div class="dialog-actions">
+        <button value="cancel" autofocus>Cancelar</button>
+        <button value="confirm">Empezar ronda</button>
+      </div>
+    </form>
+  </dialog>
+</body>
+</html>
